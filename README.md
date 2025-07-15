@@ -121,3 +121,78 @@ This project and its scripts are licensed under the GNU General Public License v
 ---
 
 If you have questions or need help, please refer to the official documentation or open an issue in your project repository.
+
+---
+
+## Important Commands
+
+Below are some of the most useful commands you can run inside the container, along with explanations of what they do:
+
+### General Devcontainer Commands
+
+- **Rebuild the container**
+  ```sh
+  # In VS Code, open the Command Palette (Ctrl+Shift+P) and run:
+  Dev Containers: Rebuild and Reopen in Container
+  ```
+  _Rebuilds the Docker image and restarts the development environment. Use this if you change the Dockerfile or setup scripts._
+
+- **Open a terminal in the container**
+  ```sh
+  # In VS Code, open a new terminal (Ctrl+`)
+  ```
+  _Opens a shell inside the running container, where you can run all commands below._
+
+### OMNeT++ Commands
+
+- **Check OMNeT++ version**
+  ```sh
+  omnetpp --version
+  ```
+  _Displays the installed OMNeT++ version and confirms it is available._
+
+- **Run OMNeT++ IDE (GUI)**
+  ```sh
+  omnetpp
+  ```
+  _Launches the OMNeT++ graphical IDE (if X11 forwarding or a GUI is available)._
+
+- **Compile a simulation**
+  ```sh
+  make
+  ```
+  _Builds your OMNeT++ simulation project (run in your project directory)._
+
+- **Run a simulation**
+  ```sh
+  opp_run -n .:../veins/src -l ../veins/src/veins
+  ```
+  _Runs a simulation using OMNeT++ (adjust paths as needed for your setup)._
+
+### SUMO Commands
+
+- **Check SUMO version**
+  ```sh
+  sumo --version
+  ```
+  _Displays the installed SUMO version and confirms it is available._
+
+- **Run SUMO in command-line mode**
+  ```sh
+  sumo -c your_config_file.sumocfg
+  ```
+  _Runs a SUMO simulation using the specified configuration file._
+
+- **Run SUMO with GUI**
+  ```sh
+  sumo-gui -c your_config_file.sumocfg
+  ```
+  _Launches the SUMO graphical user interface (if X11 forwarding or a GUI is available)._
+
+### Veins/Devcontainer Setup Commands
+
+- **Install devcontainer setup into Veins project**
+  ```sh
+  ./install.sh
+  ```
+  _Links the devcontainer configuration into your Veins project. Run this from the `veins_devcontainer` directory._
